@@ -15,11 +15,11 @@ class SecondActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnLoad.setOnClickListener {
-            val filename = "$packageName-$ {MainActivity.RPL}"
+            val filename = "$packageName-${MainActivity.RPL}"
             val pref = getSharedPreferences(filename, Context.MODE_PRIVATE)
             val firstName = pref.getString("firstName", "")
             val lastName = pref.getString("lastName", "")
-            binding.tvOutput.text = "$firstName $lastName "
+            binding.tvOutput.text = "$firstName $lastName"
         }
     }
 

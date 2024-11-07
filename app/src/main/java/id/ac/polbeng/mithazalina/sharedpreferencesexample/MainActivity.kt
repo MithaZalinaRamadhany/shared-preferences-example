@@ -1,9 +1,9 @@
 package id.ac.polbeng.mithazalina.sharedpreferencesexample
 
 import android.content.Context
-import android.os.Bundle
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
 import android.widget.Toast
 import id.ac.polbeng.mithazalina.sharedpreferencesexample.databinding.ActivityMainBinding
 
@@ -11,12 +11,16 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
+    companion object {
+        const val RPL = "shared_prefs_file" // Nama file SharedPreferences yang konsisten
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val filename = "$packageName TESTFILE"
+        val filename = "$packageName-$RPL"
         val pref = getSharedPreferences(filename, Context.MODE_PRIVATE)
 
         binding.btnSave.setOnClickListener {
@@ -36,7 +40,7 @@ class MainActivity : AppCompatActivity() {
             binding.tvOutput.text = output
         }
 
-        binding.btnSecondActivity.setOnClickListener{
+        binding.btnSecondActivity.setOnClickListener {
             val intent = Intent(this@MainActivity, SecondActivity::class.java)
             startActivity(intent)
         }
