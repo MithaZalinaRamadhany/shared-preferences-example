@@ -18,7 +18,7 @@ class SecondActivity : AppCompatActivity() {
             val filename = "$packageName-${MainActivity.RPL}"
             val pref = getSharedPreferences(filename, Context.MODE_PRIVATE)
             val firstName = pref.getString("firstName", "")
-            val lastName = pref.getString("lastName", "")
+            val lastName = pref.getString("LastName", "")
             binding.tvOutput.text = "$firstName $lastName"
         }
     }
