@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     companion object {
-        const val RPL = "shared_prefs_file" // Nama file SharedPreferences yang konsisten
+        const val RPL = "shared_prefs_file" // Nama file SharedPreferences yang konsistenn
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
